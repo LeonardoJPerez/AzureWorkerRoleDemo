@@ -1,0 +1,4 @@
+DiagnosticsPluginLauncher.exe Information: 0 : [6/28/2016 4:49:13 PM] Emulator config file set to C:\Source\TestHangFireOnAzure\TestHangFireOnAzure\csx\Debug\roles\HangfireServerRole\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [6/28/2016 4:49:13 PM] DiagnosticsStoreRootPath set to: C:\Users\lperez\AppData\Local\dftmp\Resources\bf4cc451-fbd5-4221-9de1-72b40e30f1da
+DiagnosticsPluginLauncher.exe Information: 0 : [6/28/2016 4:49:13 PM] Loading config file: C:\Source\TestHangFireOnAzure\TestHangFireOnAzure\csx\Debug\roles\HangfireServerRole\approot\diagnostics.wadcfgx
+DiagnosticsPluginLauncher.exe Information: 0 : [6/28/2016 4:49:13 PM] Config file to read: C:\Source\TestHangFireOnAzure\TestHangFireOnAzure\csx\Debug\roles\HangfireServerRole\approot\diagnostics.wadcfgx
