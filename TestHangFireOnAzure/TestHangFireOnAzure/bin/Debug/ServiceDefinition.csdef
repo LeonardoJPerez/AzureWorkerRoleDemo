@@ -15,33 +15,8 @@
     </ConfigurationSettings>
     <Contents>
       <Content destination=".\">
-        <SourceDirectory path="C:\Source\TestHangFireOnAzure\TestHangFireOnAzure\rcf\Debug\HangfireServerRoleContent\" />
-      </Content>
-      <Content destination=".\">
-        <SourceDirectory path="C:\Source\TestHangFireOnAzure\TestHangFireOnAzure\ecf\HangfireServerRoleContent\" />
+        <SourceDirectory path="C:\Source\AzureWorkerRoleDemo\TestHangFireOnAzure\TestHangFireOnAzure\rcf\Debug\HangfireServerRoleContent\" />
       </Content>
     </Contents>
-    <Imports>
-      <Import moduleName="Diagnostics" />
-    </Imports>
-  </WorkerRole>
-  <WorkerRole name="HangfireDashboardRole" vmsize="Small">
-    <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
-    </ConfigurationSettings>
-    <Endpoints>
-      <InputEndpoint name="Endpoint1" protocol="http" port="80" localPort="80" />
-    </Endpoints>
-    <Contents>
-      <Content destination=".\">
-        <SourceDirectory path="C:\Source\TestHangFireOnAzure\TestHangFireOnAzure\rcf\Debug\HangfireDashboardRoleContent\" />
-      </Content>
-      <Content destination=".\">
-        <SourceDirectory path="C:\Source\TestHangFireOnAzure\TestHangFireOnAzure\ecf\HangfireDashboardRoleContent\" />
-      </Content>
-    </Contents>
-    <Imports>
-      <Import moduleName="Diagnostics" />
-    </Imports>
   </WorkerRole>
 </ServiceDefinition>

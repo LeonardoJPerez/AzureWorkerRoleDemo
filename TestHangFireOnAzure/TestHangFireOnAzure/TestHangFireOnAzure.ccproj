@@ -39,14 +39,6 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\HangfireDashboardRole\HangfireDashboardRole.csproj">
-      <Name>HangfireDashboardRole</Name>
-      <Project>{00f46850-2b05-4bd1-99ce-e041c7549428}</Project>
-      <Private>True</Private>
-      <RoleType>Worker</RoleType>
-      <RoleName>HangfireDashboardRole</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
     <ProjectReference Include="..\HangfireServerRole\HangfireServerRole.csproj">
       <Name>HangfireServerRole</Name>
       <Project>{1dcdd7f5-5326-4f90-9964-68467cb43d9f}</Project>

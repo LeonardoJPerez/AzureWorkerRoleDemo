@@ -1,6 +1,7 @@
 using Hangfire;
 using Hangfire.Mongo;
 using Microsoft.WindowsAzure.ServiceRuntime;
+using NLog;
 using System;
 using System.Configuration;
 using System.Diagnostics;
@@ -15,6 +16,7 @@ namespace HangfireServerRole
         private readonly CancellationTokenSource _cancellationTokenSource = new CancellationTokenSource();
         private readonly ManualResetEvent _runCompleteEvent = new ManualResetEvent(false);
         private BackgroundJobServer _server;
+        private static Logger logger = LogManager.GetCurrentClassLogger();
 
         public override void Run()
         {
@@ -44,7 +46,7 @@ namespace HangfireServerRole
             var hangFiredatabase = ConfigurationManager.AppSettings["Hangfire.MongoDb.DatabaseName"];
             GlobalConfiguration.Configuration.UseMongoStorage(hangFireConnectionString, hangFiredatabase);
 
-            _server = new BackgroundJobServer();
+            this._server = new BackgroundJobServer();
 
             // Injecting service dependencies.
 
@@ -59,7 +61,7 @@ namespace HangfireServerRole
 
             this._cancellationTokenSource.Cancel();
             this._runCompleteEvent.WaitOne();
-            _server.Dispose();
+            this._server.Dispose();
 
             base.OnStop();
 
@@ -73,7 +75,7 @@ namespace HangfireServerRole
                 Trace.TraceInformation("Working");
                 //await Task.Delay(1000, cancellationToken);
 
-                RecurringJob.AddOrUpdate(() => Console.WriteLine($"Process ran successfulle at {DateTime.Now}"), Cron.Minutely, queue: "critical");
+                RecurringJob.AddOrUpdate(() => logger.Info($"Process ran successful at {DateTime.Now}"), Cron.Minutely, queue: "critical");
             }
         }
     }
